@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.3xqxv.mongodb.net/?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@ccluster0.uztjgoi.mongodb.net/?retryWrites=true&w=majority`;
 console.log(uri);
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
@@ -18,7 +18,7 @@ const client = new MongoClient(uri, {
 
 async function run() {
   try {
-    await client.connect();
+   
     const projectCollection = client.db("portfolio").collection("projects");
 
     app.get("/projects", async (req, res) => {
